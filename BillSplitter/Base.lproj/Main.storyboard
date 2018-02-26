@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,69 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="veb-oT-Fcy">
+                                <rect key="frame" x="16" y="38" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="zqn-iJ-bfb">
+                                <rect key="frame" x="14" y="117" width="347" height="31"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTF-w2-CEv">
+                                <rect key="frame" x="87" y="154" width="200" height="30"/>
+                                <state key="normal" title="Calculate Amount Per Person"/>
+                                <connections>
+                                    <action selector="calculateSplitAmount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P7X-iF-9o7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Per Person" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNA-f4-HhR">
+                                <rect key="frame" x="16" y="192" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of People:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaC-NB-L9s">
+                                <rect key="frame" x="116" y="88" width="143" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bNA-f4-HhR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Em-tG-QZp"/>
+                            <constraint firstItem="veb-oT-Fcy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Bv2-Rz-0KG"/>
+                            <constraint firstItem="veb-oT-Fcy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="CBk-NF-hBG"/>
+                            <constraint firstItem="bNA-f4-HhR" firstAttribute="top" secondItem="sTF-w2-CEv" secondAttribute="bottom" constant="8" symbolic="YES" id="En6-L5-69j"/>
+                            <constraint firstItem="zqn-iJ-bfb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kyw-OL-L5w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bNA-f4-HhR" secondAttribute="bottom" constant="454" id="L9U-bs-7NS"/>
+                            <constraint firstItem="ZaC-NB-L9s" firstAttribute="top" secondItem="veb-oT-Fcy" secondAttribute="bottom" constant="20" id="OBp-Lr-kcB"/>
+                            <constraint firstItem="zqn-iJ-bfb" firstAttribute="width" secondItem="veb-oT-Fcy" secondAttribute="width" id="QTu-6b-IbV"/>
+                            <constraint firstItem="zqn-iJ-bfb" firstAttribute="top" secondItem="ZaC-NB-L9s" secondAttribute="bottom" constant="8" symbolic="YES" id="UZ1-Ha-NpF"/>
+                            <constraint firstItem="ZaC-NB-L9s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ync-Hm-MfN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="veb-oT-Fcy" secondAttribute="trailing" constant="16" id="fDc-b0-15k"/>
+                            <constraint firstItem="bNA-f4-HhR" firstAttribute="width" secondItem="veb-oT-Fcy" secondAttribute="width" id="ohw-xl-3tC"/>
+                            <constraint firstItem="veb-oT-Fcy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pP6-y7-aJl"/>
+                            <constraint firstItem="sTF-w2-CEv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w7x-6W-v4a"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="amountPerPerson" destination="bNA-f4-HhR" id="dhG-sz-0gk"/>
+                        <outlet property="billAmountTextfield" destination="veb-oT-Fcy" id="G1n-rl-ewq"/>
+                        <outlet property="numOfPeopleLabel" destination="ZaC-NB-L9s" id="xVS-xM-reo"/>
+                        <outlet property="numberOfPeople" destination="zqn-iJ-bfb" id="oP8-wu-LNB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
